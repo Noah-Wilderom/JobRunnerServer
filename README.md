@@ -9,7 +9,7 @@
 
 ## Build
 ### Manual
-```shell
+```console
 mkdir -p ./build
 cmake -B/build -S . -D CMAKE_BUILD_TYPE=Release
 cmake --build /build
@@ -17,7 +17,7 @@ cmake --build /build
 ```
 
 ### Docker
-```shell
+```console
 docker build --rm -f Dockerfile -t runner-server:latest .
 docker run --rm -it runner-server:latest
 ```
