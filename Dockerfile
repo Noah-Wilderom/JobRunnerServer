@@ -26,4 +26,4 @@ RUN cmake --build /build
 
 RUN echo "Starting..."
 
-CMD ["./build/WebHelper"]
+CMD ["./build/RunnerServer"]
