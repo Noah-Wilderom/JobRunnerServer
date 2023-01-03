@@ -1,5 +1,11 @@
 name: C++ cmake build
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+    
 jobs:
   build-ubuntu:
 
