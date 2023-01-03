@@ -5,7 +5,9 @@ on:
       - master
   pull_request:
   workflow_dispatch:
-    
+    branches:
+      - master
+
 jobs:
   build-ubuntu:
 
