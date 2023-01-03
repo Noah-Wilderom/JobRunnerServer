@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C++ cmake build
 on: [push]
 jobs:
   build-ubuntu:
@@ -23,4 +23,3 @@ jobs:
       - name: build
         run: docker build --rm -f Dockerfile -t runner-server:latest .
 
-  
