@@ -29,3 +29,19 @@ jobs:
         run: cmake --build build --config Debug
       - name: test
         run: cd build && ctest
+
+  build-macos:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ macos-latest ]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: configure
+        run: mkdir build && cd build && cmake ..
+      - name: build
+        run: cmake --build build --config Debug
+      - name: test
+        run: cd build && ctest
