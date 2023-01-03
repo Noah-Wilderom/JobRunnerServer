@@ -14,34 +14,13 @@ jobs:
       - name: test
         run: cd build && ctest
 
-  build-windows:
+  build-ubuntu-docker:
 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, windows-2016]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
-      - name: configure
-        run: mkdir build && cd build && cmake ..
       - name: build
-        run: cmake --build build --config Debug
-      - name: test
-        run: cd build && ctest
+        run: docker build --rm -f Dockerfile -t runner-server:latest .
 
-  build-macos:
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ macos-latest ]
-
-    steps:
-      - uses: actions/checkout@v1
-      - name: configure
-        run: mkdir build && cd build && cmake ..
-      - name: build
-        run: cmake --build build --config Debug
-      - name: test
-        run: cd build && ctest
+  
